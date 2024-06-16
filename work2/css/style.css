@@ -1,0 +1,103 @@
+@charset "utf-8";
+html{
+    font-size: 100%;    /*設定の文字のサイズを正しく反映*/
+}
+.wrapper{
+    max-width: 960px;   /*全体の幅を960pxにする*/
+    margin: 0 auto;     /*全体を中央揃えにする*/
+}
+
+header{
+    display: flex;      /*headerの子要素h1とnavを横並びにする*/
+    align-items: center;/*h1とnavを縦中央揃えにする*/
+    height: 100px;      /*headerの高さを100pxにする*/
+}
+
+nav{
+    margin-left: auto;  /*navの左のmarginをautoにして全体を右に寄せる*/
+}
+
+ul{
+    display: flex;      /*ulの子要素liを横並びにする*/
+}
+
+li{
+    border-left: solid 1px #4c4c4c;/*liの左側に1pxの実線を引く*/
+    font-size: 14px;    /*liのフォントサイズを14pxにする*/
+    padding: 0px 30px;  /*liのpaddingを上下0px、左右30pxにする*/
+
+
+
+}
+
+li:first-child{         /*liの最初の子要素を指定*/
+    border-left: none;  /*実線を無効にする*/
+}
+
+li:last-child{          /*liの最後の子要素を指定*/
+    padding-right: 0px; /*右側のpaddingを0pxにする*/
+}
+
+.box1{
+    display: flex;      /*box1の子要素box-blueを横並びにする*/
+    flex-wrap: wrap;    /*要素を画面幅で折り返す*/
+    justify-content: center;/*flexアイテムを中央に配置する*/
+    gap: 1.5rem;        /*flexアイテム間に余白を設定する（外側の余白はできない）*/
+    margin-bottom: 1.5rem;/*htmlのフォントサイズが基準*/
+}
+
+.box_blue{
+    width: 300px;
+    height: 300px;
+    background-color: blue;
+}
+
+.box2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.box_red{
+    width: 300px;
+    height: 300px;
+    background-color: red;
+}
+
+@media screen and (max-width :767px) {/*レスポンシブ対応のためのメディアクエリ。幅767px以下で以下のCSSに切り替わる*/
+    header{
+        display: block; /*headerを一つのコンテンツとしてまとめる。要素を縦に並べる*/
+        height: auto;   /*headerの高さを要素に合わせる*/
+        margin: 30px;
+    }
+
+   
+    ul{
+        flex-direction: column;/*ulの子要素を縦方向に並べる*/
+    }
+
+    li{
+        border-bottom: solid 1px #4c4c4c;/*liの下部に1pxの実線を引く*/
+        border-left: none;  /*元々つけていたli左部の実線を無効化する*/
+        width: 80%;         /*liの全体の幅を画面の80％のサイズにする*/
+        padding: 1rem 0%;   /*liの上下の内部余白をhtmlのフォントサイズの1倍にする*/
+    }
+
+   .box1{
+    flex-direction: column; /*box1の子要素を縦に並べる*/
+    margin: 1.5rem;         /*外部余白をhtmlのフォントサイズの1.5倍にし、box1とbox2の間に余白を作る*/
+}
+
+   .box2{
+        flex-direction: column;/*box2の子要素を縦に並べる*/
+    }
+
+    .box_blue,.box_red{
+        margin: 0 auto;     /*box_blue、box_redの要素を中央配置にする*/
+    }
+body{
+    font-size: 14px;        /*bodyタグに含まれるフォントを14pxにする*/
+}
+    
+}
